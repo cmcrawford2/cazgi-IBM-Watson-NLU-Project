@@ -38,12 +38,12 @@ class App extends React.Component {
   } 
   
   sendForSentimentAnalysis = () => {
-    console.log("send for emotion analysis");
+    // console.log("send for sentiment analysis");
     this.setState({sentiment:true});
     let url = ".";
     let mode = this.state.mode
     url = url+"/" + mode + "/sentiment?"+ mode + "="+document.getElementById("textinput").value;
-    console.log({url});
+    // console.log({url});
     fetch(url).then((response)=>{
         response.json().then((data)=>{
         this.setState({sentimentOutput:data.label});
@@ -61,12 +61,12 @@ class App extends React.Component {
   }
 
   sendForEmotionAnalysis = () => {
-    console.log("send for emotion analysis");
+    // console.log("send for emotion analysis");
     this.setState({sentiment:false});
     let url = ".";
     let mode = this.state.mode
     url = url+"/" + mode + "/emotion?"+ mode + "="+document.getElementById("textinput").value;
-    console.log({url});
+    // console.log({url});
     fetch(url).then((response)=>{
       response.json().then((data)=>{
       this.setState({sentimentOutput:<EmotionTable emotions={data}/>});

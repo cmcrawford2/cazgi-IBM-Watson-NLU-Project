@@ -121,7 +121,6 @@ app.get("/text/emotion", (req,res) => {
 app.get("/text/sentiment", (req,res) => {
     //Extract the text passed from the client through the request object
     let textToAnalyze = req.query.text
-    console.log(textToAnalyze);
     const analyzeParams = 
         {
             "text": textToAnalyze,
